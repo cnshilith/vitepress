@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# 新增这个 env 部分
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 permissions:
   contents: read
   pages: write
@@ -15,14 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        # 升级到 v4
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        # 升级到 v4
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '18' # 这是你项目构建用的 Node 版本，保持不变
 
       - name: Install dependencies
         run: npm install
@@ -31,7 +33,6 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        # 升级到 v3 (这是官方推荐的适配版本)
         uses: actions/upload-pages-artifact@v3
         with:
           path: .vitepress/dist
@@ -44,5 +45,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        # 升级到 v3
         uses: actions/deploy-pages@v3
