@@ -15,10 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        # 升级到 v4
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        # 升级到 v4
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
@@ -29,7 +31,8 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        # 升级到 v3 (这是官方推荐的适配版本)
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .vitepress/dist
 
@@ -41,4 +44,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        # 升级到 v3
+        uses: actions/deploy-pages@v3
