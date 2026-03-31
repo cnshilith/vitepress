@@ -10,6 +10,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
+      { text: 'Linux', link: '/' },
+      { text: 'Docker', link: '/' },
       { text: '示例', link: '/markdown-examples' }
     ],
 
