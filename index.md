@@ -14,8 +14,8 @@ hero:
       text: 我的博客
       link: https://www.shiyunhao.cn
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Docker教程
+      link: /docs/posts/Docker教程.md
 
 features:
   - icon:

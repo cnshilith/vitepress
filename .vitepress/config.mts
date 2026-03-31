@@ -11,16 +11,18 @@ export default defineConfig({
     nav: [
       { text: '主页', link: '/' },
       { text: 'Linux', link: '/' },
-      { text: 'Docker', link: '/' },
-      { text: '示例', link: '/markdown-examples' }
+      { text: 'Docker', link: '/docs/posts/Docker教程.md' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'SHILITH',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '开源软件镜像站汇总', link: '/docs/posts/开源软件镜像站汇总.md' },
+          { text: 'Docker教程', link: '/docs/posts/Docker教程.md' },
+          { text: 'K3s常用命令', link: '/docs/posts/K3s常用命令.md' },
+          { text: 'linux常用命令手册', link: '/docs/posts/linux常用命令手册.md' },
+          { text: 'Markdown语法', link: '/docs/posts/Markdown语法.md' }
         ]
       }
     ],
