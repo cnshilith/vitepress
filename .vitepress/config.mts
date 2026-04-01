@@ -10,19 +10,30 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
-      { text: 'Linux', link: '/' },
-      { text: 'Docker', link: '/docs/posts/Docker教程.md' },
+      { text: '基础技术', link: '/docs/posts/linux常用命令手册.md' },
+      { text: '容器技术', link: '/docs/posts/Docker教程.md' },
+      { text: '资源汇总', link: '/docs/posts/开源软件镜像站汇总.md' }
     ],
 
     sidebar: [
       {
-        text: 'SHILITH',
+        text: '容器技术',
         items: [
-          { text: '开源软件镜像站汇总', link: '/docs/posts/开源软件镜像站汇总.md' },
           { text: 'Docker教程', link: '/docs/posts/Docker教程.md' },
-          { text: 'K3s常用命令', link: '/docs/posts/K3s常用命令.md' },
-          { text: 'linux常用命令手册', link: '/docs/posts/linux常用命令手册.md' },
+          { text: 'K3s常用命令', link: '/docs/posts/K3s常用命令.md' }
+        ]
+      },
+      {
+        text: '基础技术',
+        items: [
+          { text: 'Linux常用命令手册', link: '/docs/posts/linux常用命令手册.md' },
           { text: 'Markdown语法', link: '/docs/posts/Markdown语法.md' }
+        ]
+      },
+      {
+        text: '资源汇总',
+        items: [
+          { text: '开源软件镜像站汇总', link: '/docs/posts/开源软件镜像站汇总.md' }
         ]
       }
     ],
