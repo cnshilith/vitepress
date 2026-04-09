@@ -27,7 +27,8 @@ export default defineConfig({
         text: '基础技术',
         items: [
           { text: 'Linux常用命令手册', link: '/docs/posts/linux常用命令手册.md' },
-          { text: 'Markdown语法', link: '/docs/posts/Markdown语法.md' }
+          { text: 'Markdown语法', link: '/docs/posts/Markdown语法.md' },
+          { text: 'nginx 配置文件', link: '/docs/posts/nginx 配置文件.md' }
         ]
       },
       {
