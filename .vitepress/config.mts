@@ -5,6 +5,9 @@ export default defineConfig({
   base: "/",
   title: "我的技术笔记",
   description: "VitePress学习之路",
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config

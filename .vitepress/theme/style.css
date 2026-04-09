@@ -137,4 +137,163 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-code-font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  --vp-code-block-bg: rgba(175, 184, 193, 0.1);
+  --vp-code-block-border: 1px solid rgba(175, 184, 193, 0.2);
+  --vp-code-block-radius: 8px;
+  --vp-code-block-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --vp-code-inline-bg: rgba(175, 184, 193, 0.15);
+  --vp-code-inline-radius: 4px;
+}
+
+.dark {
+  --vp-code-block-bg: rgba(0, 0, 0, 0.3);
+  --vp-code-block-border: 1px solid rgba(175, 184, 193, 0.1);
+  --vp-code-inline-bg: rgba(255, 255, 255, 0.05);
+}
+
+/**
+ * Code Block
+ */
+
+.VPContent pre {
+  border-radius: var(--vp-code-block-radius);
+  border: var(--vp-code-block-border);
+  box-shadow: var(--vp-code-block-shadow);
+  transition: all 0.2s ease;
+}
+
+.VPContent pre:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Inline Code
+ */
+
+.VPContent :not(pre) > code {
+  background: var(--vp-code-inline-bg);
+  border-radius: var(--vp-code-inline-radius);
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.VPContent :not(pre) > code:hover {
+  background: var(--vp-c-brand-soft);
+}
+
+/**
+ * Code Line Numbers
+ */
+
+.VPContent .line-numbers {
+  border-right: 1px solid rgba(175, 184, 193, 0.2);
+  padding-right: 12px;
+  margin-right: 12px;
+}
+
+.dark .VPContent .line-numbers {
+  border-right-color: rgba(175, 184, 193, 0.1);
+}
+
+/**
+ * Component: Table
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-table-border: 1px solid rgba(175, 184, 193, 0.2);
+  --vp-table-header-bg: rgba(175, 184, 193, 0.1);
+  --vp-table-row-hover-bg: rgba(175, 184, 193, 0.05);
+}
+
+.dark {
+  --vp-table-border: 1px solid rgba(175, 184, 193, 0.1);
+  --vp-table-header-bg: rgba(0, 0, 0, 0.2);
+  --vp-table-row-hover-bg: rgba(255, 255, 255, 0.05);
+}
+
+/**
+ * Table Styles
+ */
+
+.VPContent table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.VPContent th,
+.VPContent td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border: var(--vp-table-border);
+  white-space: nowrap;
+}
+
+.VPContent th {
+  background-color: var(--vp-table-header-bg);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.VPContent tr:hover {
+  background-color: var(--vp-table-row-hover-bg);
+}
+
+/**
+ * Ensure consistent column widths
+ */
+
+.VPContent table {
+  table-layout: fixed;
+}
+
+.VPContent th:first-child,
+.VPContent td:first-child {
+  width: 20%;
+  min-width: 120px;
+}
+
+.VPContent th:nth-child(2),
+.VPContent td:nth-child(2) {
+  width: 20%;
+  min-width: 120px;
+}
+
+.VPContent th:nth-child(3),
+.VPContent td:nth-child(3) {
+  width: 20%;
+  min-width: 120px;
+}
+
+.VPContent th:nth-child(4),
+.VPContent td:nth-child(4) {
+  width: 40%;
+  min-width: 240px;
+}
+
+/**
+ * Table container for horizontal scrolling
+ */
+
+.VPContent .table-container {
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.VPContent .table-container table {
+  margin: 0;
+}
+
 
