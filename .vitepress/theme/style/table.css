@@ -1,0 +1,129 @@
+/**
+ * Table Styles
+ */
+
+:root {
+  --vp-table-border: 1px solid rgba(175, 184, 193, 0.2);
+  --vp-table-header-bg: rgba(175, 184, 193, 0.1);
+  --vp-table-header-text: var(--vp-c-text-1);
+  --vp-table-row-bg: var(--vp-c-bg);
+  --vp-table-row-hover-bg: rgba(175, 184, 193, 0.05);
+  --vp-table-row-text: var(--vp-c-text-1);
+}
+
+.dark {
+  --vp-table-border: 1px solid rgba(175, 184, 193, 0.2);
+  --vp-table-header-bg: rgba(255, 255, 255, 0.08);
+  --vp-table-header-text: var(--vp-c-text-1);
+  --vp-table-row-bg: rgba(255, 255, 255, 0.03);
+  --vp-table-row-hover-bg: rgba(255, 255, 255, 0.08);
+  --vp-table-row-text: var(--vp-c-text-1);
+}
+
+/**
+ * Table container for horizontal scrolling
+ */
+
+.VPContent .table-container {
+  overflow-x: auto;
+  margin: 1.5em 0;
+  max-width: 100%;
+}
+
+.VPContent .table-container table {
+  margin: 0;
+  min-width: 600px;
+}
+
+/**
+ * Table Styles
+ */
+
+.VPContent table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.VPContent th,
+.VPContent td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border: var(--vp-table-border);
+  color: var(--vp-table-row-text);
+  white-space: nowrap;
+}
+
+.VPContent th {
+  background-color: var(--vp-table-header-bg);
+  color: var(--vp-table-header-text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.VPContent tr {
+  background-color: var(--vp-table-row-bg);
+  transition: background-color 0.2s ease;
+}
+
+.VPContent tr:hover {
+  background-color: var(--vp-table-row-hover-bg);
+}
+
+/**
+ * Column width settings
+ */
+
+/* Two-column table */
+.VPContent th:first-child,
+.VPContent td:first-child {
+  width: 25%;
+  min-width: 120px;
+}
+
+.VPContent th:last-child,
+.VPContent td:last-child {
+  width: 75%;
+  min-width: 200px;
+}
+
+/* Four-column table */
+.VPContent th:nth-child(1),
+.VPContent td:nth-child(1) {
+  width: 20%;
+  min-width: 100px;
+}
+
+.VPContent th:nth-child(2),
+.VPContent td:nth-child(2) {
+  width: 20%;
+  min-width: 100px;
+}
+
+.VPContent th:nth-child(3),
+.VPContent td:nth-child(3) {
+  width: 20%;
+  min-width: 100px;
+}
+
+.VPContent th:nth-child(4),
+.VPContent td:nth-child(4) {
+  width: 40%;
+  min-width: 150px;
+}
+
+/**
+ * Responsive table
+ */
+
+@media (max-width: 640px) {
+  .VPContent table {
+    display: block;
+    overflow-x: auto;
+  }
+}

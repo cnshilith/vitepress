@@ -163,7 +163,7 @@ Windows 的 Docker 桌面版和 Docker Toolbox 已经包括 Compose 和其他 Do
 
 #### docker-compose常用命令
 
-```dockerfile
+```sh
 # 构建建启动nignx容器
 docker-compose up -d nginx           
 

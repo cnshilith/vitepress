@@ -44,9 +44,8 @@ date: 2026-03-31
 
 **配置环境变量（方便直接使用 `kubectl`）：**
 
-bash
 
-```
+```sh
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 # 然后就可以直接使用 kubectl 了
 kubectl get nodes
@@ -109,49 +108,44 @@ kubectl get nodes
 
 1. **快速查看所有运行中的 Pod：**
 
-   bash
-
-   ```
+   ```sh
    k3s kubectl get pods -A --field-selector=status.phase=Running
    ```
 
-   
 
 2. **查看 Pod 的完整定义（用于写 YAML 参考）：**
 
-   bash
-
-   ```
+   ```sh
    k3s kubectl get pod <pod-name> -n <namespace> -o yaml
    ```
 
-   
-
 3. **强制删除一个卡在 `Terminating` 状态的 Pod：**
 
-   bash
-
-   ```
+   ```sh
    k3s kubectl delete pod <pod-name> -n <namespace> --force --grace-period=0
    ```
 
-   
 
 4. **端口转发（将本地端口映射到集群中的 Pod）：**
 
-   bash
-
+   ```sh
+   k3s kubectl port-forward <pod-name> 8080:80 -n <namespace>
+   # 然后可以在本地通过 http://localhost:8080 访问 Pod 的 80 端口
    ```
+   
+
+5. **端口转发（将本地端口映射到集群中的 Pod）：**
+
+   ```sh
    k3s kubectl port-forward <pod-name> 8080:80 -n <namespace>
    # 然后可以在本地通过 http://localhost:8080 访问 Pod 的 80 端口
    ```
 
    
 
-5. **查看 Service 的 Endpoints（确认 Pod 是否被正确关联）：**
+6. **查看 Service 的 Endpoints（确认 Pod 是否被正确关联）：**
 
-   bash
 
-   ```
+   ```sh
    k3s kubectl get endpoints <service-name> -n <namespace>
    ```

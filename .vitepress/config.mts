@@ -11,6 +11,13 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
+
+    outline: {
+      level: [2,4], // 显示2-4级标题
+      // level: 'deep', // 显示2-6级标题
+      label: '当前页大纲' // 文字显示
+    },
+
     nav: [
       { text: '主页', link: '/' },
       { text: '基础技术', link: '/docs/posts/linux常用命令手册.md' },
