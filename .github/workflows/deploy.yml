@@ -1,0 +1,64 @@
+name: Deploy VitePress site to Pages
+
+on:
+  # 当 main 分支有推送时触发
+  push:
+    branches: [main]
+  # 允许手动触发工作流
+  workflow_dispatch:
+
+# 设置权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 并发控制，防止多次部署冲突
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # 1. 构建任务
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 # ✅ 升级到 v4
+        with:
+          fetch-depth: 0 # 获取所有历史记录，用于最后更新时间等功能
+
+      - name: Setup Node
+        uses: actions/setup-node@v4 # ✅ 升级到 v4
+        with:
+          node-version: 20 # ✅ 使用稳定的 LTS 版本
+          cache: npm # ✅ 如果你使用 pnpm，请改为 pnpm
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4 # ✅ 升级到 v4
+
+      - name: Install dependencies
+        run: npm ci # ✅ 如果你使用 pnpm，请改为 pnpm install
+
+      - name: Build with VitePress
+        run: npm run docs:build # ✅ 如果你使用 pnpm，请改为 pnpm docs:build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3 # ✅ 升级到 v3
+        with:
+          # ⚠️ 关键修正：VitePress 默认构建目录通常在 docs/.vitepress/dist
+          # 如果你的 package.json 中配置了其他目录，请相应修改这里
+          path: .vitepress/dist
+
+  # 2. 部署任务
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # ✅ 升级到 v4
