@@ -26,17 +26,17 @@ features:
   - icon:
       src: /镜像.svg
     title: 开源软件镜像站汇总
-    details: 这类站点通常由高校、科研机构或科技企业运营维护，是开源生态中不可或缺的一环。它们不仅为开发者提供了一站式、高效可靠的资源获取渠道，也极大地促进了开源技术的普及与发展。
+    details: 这类站点通常由高校、科研机构或科技企业运营维护，是开源生态中不可或缺的一环。
     link: /docs/posts/开源软件镜像站汇总.md
   - icon:
       src: /markdown.svg
     title: Markdown语法
-    details: Markdown是一种轻量型标记语言, 是一种语法,它处处透露着一种极简主义. 高效简洁清晰的同时, 又很简单. 看起来舒服, 语法简单, 尤其在处理纯文本上有很大的优势
+    details: Markdown是一种轻量型标记语言, 高效简洁清晰的同时, 又很简单. 看起来舒服, 尤其在处理纯文本上有很大的优势。
     link: /docs/posts/Markdown语法.md
   - icon:
       src: /k8s.svg
     title: K3s常用命令
-    details: 本指南提供了K3s（轻量级Kubernetes）的常用命令，包括服务管理、kubectl核心命令、集群管理等，帮助用户快速上手和管理K3s集群。
+    details: 本指南提供了K3s（轻量级Kubernetes）的常用命令，包括服务管理、kubectl核心命令。
     link: /docs/posts/K3s常用命令.md
 ---
 

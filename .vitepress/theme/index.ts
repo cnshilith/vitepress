@@ -3,24 +3,17 @@ import { h, watch } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style/index.css'
+import './style/dark.css'
 import MouseClick from "./components/MouseClick.vue"
 import MouseFollower from "./components/MouseFollower.vue"
 import BackToTop from "./components/BackToTop.vue"
+import Layout from "./components/Layout.vue"
 
 let homePageStyle: HTMLStyleElement | undefined
 
 export default {
   extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'layout-bottom': () => [
-        h(MouseClick),
-        h(MouseFollower),
-        h(BackToTop)
-      ]
-    })
-  },
+  Layout: Layout,
   enhanceApp({ app, router, siteData }) {
     // ...
     app.component("MouseClick", MouseClick)
