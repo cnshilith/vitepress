@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { toggleDark } from './Dark.ts'
+import { toggleDark } from './Dark'
 import MouseClick from './MouseClick.vue'
 import MouseFollower from './MouseFollower.vue'
 import BackToTop from './BackToTop.vue'
