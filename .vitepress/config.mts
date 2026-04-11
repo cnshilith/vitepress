@@ -8,6 +8,15 @@ export default defineConfig({
   markdown: {
     lineNumbers: true
   },
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          // charset 属性在 rollup OutputOptions 中不存在，已移除
+        }
+      }
+    }
+  },
   themeConfig: {
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
