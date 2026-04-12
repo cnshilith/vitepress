@@ -41,7 +41,8 @@ export default defineConfig({
         items: [
           { text: 'Linux常用命令手册', link: '/docs/posts/linux常用命令手册.md' },
           { text: 'Markdown语法', link: '/docs/posts/Markdown语法.md' },
-          { text: 'nginx 配置文件', link: '/docs/posts/nginx 配置文件.md' }
+          { text: 'nginx 配置文件', link: '/docs/posts/nginx 配置文件.md' },
+          { text: 'Linux系统初始化', link: '/docs/posts/Linux系统初始化.md' }
         ]
       },
       {
