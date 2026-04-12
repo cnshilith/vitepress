@@ -40,3 +40,34 @@ features:
     link: /docs/posts/K3s常用命令.md
 ---
 
+
+
+### 常用脚本整理
+#### 综合工具箱
+```sh
+wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh && chmod +x box.sh && clear && ./box.sh
+```
+#### Nginx Proxy Manager自定义反向代理配置文件：
+```sh
+location / {
+
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header x-wiz-real-ip $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+[[proxy_set_header]] X-Forwarded-Proto $scheme;
+proxy_set_header X-Forwarded-Proto "https"; [[强制开启https]]
+proxy_set_header X-NginX-Proxy true;
+
+[[--解决转https代理后wss协议无法连接的问题]]
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection upgrade;
+[[proxy_set_header]] Connection "keep-alive";
+
+proxy_set_header Host $http_host;
+proxy_pass http://127.0.0.1:80; [[使用docker的内部地址，需要在docker配置工具中查看]]
+proxy_ssl_session_reuse off;
+proxy_cache_bypass $http_upgrade;
+proxy_redirect off; [[重定向]] off=>改成http:// https://
+}
+```
