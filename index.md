@@ -40,6 +40,8 @@ features:
     link: /docs/posts/K3s常用命令.md
 ---
 <HomeUnderline />
+<Confetti />
+<Update />
 
 ### 常用脚本整理
 #### 综合工具箱

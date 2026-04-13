@@ -2,12 +2,12 @@
   "hash": "e09a0d3b",
   "configHash": "62034b45",
   "lockfileHash": "324638c8",
-  "browserHash": "b8faa1de",
+  "browserHash": "d26b9e8d",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "39ecfd68",
+      "fileHash": "00fe1216",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
@@ -19,13 +19,13 @@
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "fa0596c6",
+      "fileHash": "cdef10f6",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "6e1fb1f0",
+      "fileHash": "2f2c8863",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
@@ -38,6 +38,12 @@
       "src": "../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
       "fileHash": "aa85a6be",
+      "needsInterop": false
+    },
+    "canvas-confetti": {
+      "src": "../../../node_modules/canvas-confetti/dist/confetti.module.mjs",
+      "file": "canvas-confetti.js",
+      "fileHash": "ce10702e",
       "needsInterop": false
     }
   },

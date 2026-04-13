@@ -9,6 +9,8 @@ import MouseFollower from "./components/MouseFollower.vue"
 import BackToTop from "./components/BackToTop.vue"
 import HomeUnderline from "./components/HomeUnderline.vue"
 import Layout from "./components/Layout.vue"
+import Confetti from "./components/confetti.vue"
+import Update from "./components/update.vue"
 
 let homePageStyle: HTMLStyleElement | undefined
 
@@ -21,6 +23,8 @@ export default {
     app.component("MouseClick", MouseClick)
     app.component("MouseFollower", MouseFollower)
     app.component("BackToTop", BackToTop)
+    app.component("Confetti", Confetti)
+    app.component("Update", Update)
     if (typeof window !== 'undefined') {
       watch(
         () => router.route.data.relativePath,
