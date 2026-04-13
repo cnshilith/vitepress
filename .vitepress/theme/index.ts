@@ -7,6 +7,7 @@ import './style/dark.css'
 import MouseClick from "./components/MouseClick.vue"
 import MouseFollower from "./components/MouseFollower.vue"
 import BackToTop from "./components/BackToTop.vue"
+import HomeUnderline from "./components/HomeUnderline.vue"
 import Layout from "./components/Layout.vue"
 
 let homePageStyle: HTMLStyleElement | undefined
@@ -16,6 +17,7 @@ export default {
   Layout: Layout,
   enhanceApp({ app, router, siteData }) {
     // ...
+    app.component("HomeUnderline", HomeUnderline)
     app.component("MouseClick", MouseClick)
     app.component("MouseFollower", MouseFollower)
     app.component("BackToTop", BackToTop)

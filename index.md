@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "我的技术笔记"
-  text: "VitePress学习之路"
+  text: "云端备忘录"
   tagline: 行动起来 活在当下
   image:
     src: /文档.svg
@@ -39,8 +39,7 @@ features:
     details: 本指南提供了K3s（轻量级Kubernetes）的常用命令，包括服务管理、kubectl核心命令。
     link: /docs/posts/K3s常用命令.md
 ---
-
-
+<HomeUnderline />
 
 ### 常用脚本整理
 #### 综合工具箱
