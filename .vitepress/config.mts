@@ -5,9 +5,7 @@ export default defineConfig({
   // base: "/vitepress/",
   head: [
     ['link', { rel: 'icon', href: '/logo.svg' }],
-    // 预加载CSS文件，优化加载顺序
-    ['link', { rel: 'preload', href: '/assets/style.css', as: 'style' }],
-    ['link', { rel: 'preload', href: '/assets/index.css', as: 'style' }]
+    ['link', { rel: 'favicon', href: '/logo.svg' }]
   ],
   title: "我的技术笔记",
   description: "VitePress学习之路",
