@@ -10,7 +10,11 @@ export default defineConfig({
   title: "我的技术笔记",
   description: "VitePress学习之路",
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    // 启用时间戳显示
+    // frontmatter: {
+    //   lastUpdated: true
+    // }
   },
   themeConfig: {
     logo: '/logo.svg',
@@ -56,7 +60,28 @@ export default defineConfig({
     ],
 
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: {
+                buttonText: '搜索',
+                buttonAriaLabel: '搜索'
+              },
+              modal: {
+                noResultsText: '没有找到结果',
+                resetButtonTitle: '清除查询',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            }
+          }
+        }
+      }
     },
 
     socialLinks: [
@@ -64,6 +89,14 @@ export default defineConfig({
     ],
     footer: {
       copyright: 'Copyright © 2026-present shilith'
+    },
+    // 启用时间戳显示
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
     }
   }
 })

@@ -593,28 +593,27 @@ docker update --restart=always nginx
 
 [官方demo](https://s.surveyking.cn/)
 
->```
->admin  
->123456
->```
+> **默认账号密码**：
+> - 用户名：admin  
+> - 密码：123456
 
 #### 创建docker-compose.yml文件
 
 ```yaml
 services:
-    surveyking:
-        image: surveyking/surveyking  #镜像名
-        volumes:
-            - './logs:/surveyking/logs'      #目录映射
-            - './files:/surveyking/files'    #目录映射
-            - './surveyking.mv.db:/surveyking/surveyking.mv.db'  #文件映射
-        ports:
-            - '1991:1991' #端口映射,:左侧的1991可以自定义
-        environment:
-            - PUID=0    # 用户ID,在终端输入id可以查看当前用户的id
-            - PGID=0    # 组ID同上
-            - TZ=Asia/Shanghai  #时区，可以自定义
-        restart: always  #总是启动
+  surveyking:
+    image: surveyking/surveyking  #镜像名
+    volumes:
+      - './logs:/surveyking/logs'      #目录映射
+      - './files:/surveyking/files'    #目录映射
+      - './surveyking.mv.db:/surveyking/surveyking.mv.db'  #文件映射
+    ports:
+      - '1991:1991' #端口映射,:左侧的1991可以自定义
+    environment:
+      - PUID=0    # 用户ID,在终端输入id可以查看当前用户的id
+      - PGID=0    # 组ID同上
+      - TZ=Asia/Shanghai  #时区，可以自定义
+    restart: always  #总是启动
 ```
 
 ---

@@ -12,3 +12,129 @@
 @import './table.css';
 @import './rainbow.css';
 @import './hidden.css';
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .VPNav {
+    padding: 0 16px;
+  }
+  
+  .VPLayout {
+    padding: 0 16px;
+  }
+  
+  .VPContent {
+    padding: 24px 0;
+  }
+  
+  .VPSidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .VPMenu {
+    padding: 0;
+  }
+  
+  .VPNavTitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .VPNavTitle {
+    font-size: 16px;
+  }
+  
+  .VPNavMenu a {
+    font-size: 14px;
+  }
+  
+  .VPContent h1 {
+    font-size: 24px;
+  }
+  
+  .VPContent h2 {
+    font-size: 20px;
+  }
+  
+  .VPContent h3 {
+    font-size: 18px;
+  }
+}
+
+/* 全局样式优化 */
+:root {
+  --vp-c-text-1: var(--vp-c-text-1);
+  --vp-c-text-2: var(--vp-c-text-2);
+  --vp-c-text-3: var(--vp-c-text-3);
+  --vp-c-bg-1: var(--vp-c-bg-1);
+  --vp-c-bg-2: var(--vp-c-bg-2);
+  --vp-c-bg-3: var(--vp-c-bg-3);
+  --vp-c-primary: var(--vp-c-primary);
+  --vp-c-primary-light: var(--vp-c-primary-light);
+  --vp-c-primary-lighter: var(--vp-c-primary-lighter);
+  --vp-c-primary-dark: var(--vp-c-primary-dark);
+  --vp-c-primary-darker: var(--vp-c-primary-darker);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--vp-c-text-1);
+  background-color: var(--vp-c-bg-1);
+}
+
+/* 代码块样式优化 */
+.VPContent pre {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格样式优化 */
+.VPContent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.VPContent th,
+.VPContent td {
+  padding: 8px 12px;
+  border: 1px solid var(--vp-c-border);
+  text-align: left;
+}
+
+.VPContent th {
+  background-color: var(--vp-c-bg-2);
+  font-weight: 600;
+}
+
+.VPContent tr:nth-child(even) {
+  background-color: var(--vp-c-bg-2);
+}
+
+/* 链接样式优化 */
+.VPContent a {
+  color: var(--vp-c-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.VPContent a:hover {
+  color: var(--vp-c-primary-dark);
+  text-decoration: underline;
+}
+
+/* 标题样式优化 */
+.VPContent h1,
+.VPContent h2,
+.VPContent h3,
+.VPContent h4,
+.VPContent h5,
+.VPContent h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
