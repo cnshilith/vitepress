@@ -4,6 +4,7 @@ node_modules/
 # 忽略 VitePress 构建产物（这是最重要的）
 dist/
 .vitepress/dist/
+.vitepress/.vitepress/
 
 # 忽略 macOS 系统文件
 .DS_Store
@@ -11,4 +12,5 @@ dist/
 # 忽略缓存
 .cache
 .cache.temp
+.vitepress/cache/
 *.local

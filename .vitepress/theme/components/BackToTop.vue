@@ -55,7 +55,7 @@ onUnmounted(() => {
 }
 
 .back-to-top:hover {
-  background: var(--vp-c-primary);
+  background: var(--vp-c-brand-1);
   color: var(--vp-c-bg);
   transform: translateY(-4px);
 }
