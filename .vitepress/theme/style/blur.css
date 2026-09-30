@@ -1,0 +1,40 @@
+/* blur.css */
+
+/* 首页下滑后导航透明 */
+:root .VPNavBar:not(.has-sidebar):not(.home.top) {
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+}
+
+/* 搜索框透明 */
+:root .DocSearch-Button {
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+}
+
+/* Feature透明 */
+:root .VPFeature {
+    border: 1px solid transparent;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 15%);
+    background-color: transparent;
+}
+
+/* 文档页侧边栏顶部透明 */
+:root .curtain {
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+}
+
+/* 移动端大纲栏透明 */
+:root .VPLocalNav {
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+}
+
+/* 文档页导航中间透明 */
+@media (min-width: 960px) {
+    :root .VPNavBar:not(.home.top) .content-body {
+        background-color: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(10px);
+    }
+}

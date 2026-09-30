@@ -1,0 +1,38 @@
+/* hidden.css */
+
+/* 页脚横条隐藏 */
+:root .VPFooter {
+    border-top: none;
+}
+
+/* 手机端菜单栏顶部横条隐藏 */
+:root .VPNavBar.screen-open {
+    border-bottom: none;
+}
+
+/* 手机端菜单栏菜单分割线隐藏 */
+:root .VPNavScreenMenuLink {
+    border-bottom: none;
+}
+
+/* 手机端菜单组隐藏 */
+:root .VPNavScreenMenuGroup {
+    border-bottom: none;
+}
+
+/* 手机端大纲栏横条隐藏 */
+:root .VPLocalNav {
+    border-bottom: none;
+}
+
+/* 文档页Logo出文字下横条 */
+@media (min-width: 960px) {
+    :root .VPNavBarTitle.has-sidebar .title {
+        border-bottom-color: transparent;
+    }
+}
+
+/* 导航栏下划线隐藏 */
+.divider {
+    display: none;
+}

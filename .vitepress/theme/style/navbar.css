@@ -1,0 +1,65 @@
+/* 修复 VitePress 1.x 首屏导航栏错位（CLS）
+   VPNavBar 的 has-sidebar 类由 watchPostEffect 计算，SSR 阶段不执行，
+   服务端渲染出的 HTML 缺少该类，导致 >=960px 时侧边栏预留样式要等
+   客户端 hydrate 后才生效，导航栏整体向右跳 var(--vp-sidebar-width)。
+   这里在 SSR 阶段用 :has() 补齐同样的规则，hydrate 前后视觉完全一致。
+   选择器必须带完整直接子级链，否则会误命中 VPNavBarTitle 内部的 a.title。 */
+@media (min-width: 960px) {
+  body:has(.VPSidebar) .VPNavBar:not(.has-sidebar) > .wrapper {
+    padding: 0;
+  }
+
+  body:has(.VPSidebar) .VPNavBar:not(.has-sidebar) > .wrapper > .container {
+    max-width: 100%;
+  }
+
+  body:has(.VPSidebar) .VPNavBar:not(.has-sidebar) > .wrapper > .container > .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: var(--vp-nav-height);
+    padding: 0 32px;
+    width: var(--vp-sidebar-width);
+    background-color: transparent;
+  }
+
+  body:has(.VPSidebar) .VPNavBar:not(.has-sidebar) > .wrapper > .container > .content {
+    position: relative;
+    z-index: 1;
+    padding-right: 32px;
+    padding-left: var(--vp-sidebar-width);
+  }
+
+  body:has(.VPSidebar) .VPNavBar:not(.has-sidebar) > .divider {
+    padding-left: var(--vp-sidebar-width);
+  }
+}
+
+@media (min-width: 1440px) {
+  body:has(.VPSidebar) .VPNavBar:not(.has-sidebar) > .wrapper > .container > .title {
+    padding-left: max(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2));
+    width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px);
+  }
+
+  body:has(.VPSidebar) .VPNavBar:not(.has-sidebar) > .wrapper > .container > .content {
+    padding-right: calc((100vw - var(--vp-layout-max-width)) / 2 + 32px);
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+  }
+
+  body:has(.VPSidebar) .VPNavBar:not(.has-sidebar) > .divider {
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+  }
+}
+
+/* 同一类问题：VPLocalNav 的 empty 类依赖 onContentUpdated 填充 headers，
+   SSR 阶段 headers 为空数组，960-1279px 下本地导航被 display:none，
+   hydrate 后出现导致正文整体下移 47px。这里在 SSR 阶段先占位，
+   高度与 hydrate 后一致，避免跳动。选择器与 themeConfig.outline.level
+   绑定的 h2-h4 保持一致。 */
+@media (min-width: 960px) and (max-width: 1279.98px) {
+  body:has(.vp-doc :is(h2, h3, h4)) .VPLocalNav.empty {
+    display: block;
+    min-height: 47px;
+  }
+}

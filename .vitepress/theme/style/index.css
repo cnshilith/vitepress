@@ -1,0 +1,126 @@
+/* index.css */
+@import './var.css';
+@import './blockquote.css';
+@import './custom-block.css';
+@import './blur.css';
+@import './link.css';
+@import './marker.css';
+@import './vp-code.css';
+@import './vp-code-group.css';
+@import './vp-code-title.css';
+@import './sidebarIcon.css';
+@import './table.css';
+@import './rainbow.css';
+@import './hidden.css';
+@import './hero.css';
+@import './navbar.css';
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .VPNav {
+    padding: 0 16px;
+  }
+  
+  .VPLayout {
+    padding: 0 16px;
+  }
+  
+  .VPContent {
+    padding: 24px 0;
+  }
+  
+  .VPSidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .VPMenu {
+    padding: 0;
+  }
+  
+  .VPNavTitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .VPNavTitle {
+    font-size: 16px;
+  }
+  
+  .VPNavMenu a {
+    font-size: 14px;
+  }
+  
+  .VPContent h1 {
+    font-size: 24px;
+  }
+  
+  .VPContent h2 {
+    font-size: 20px;
+  }
+  
+  .VPContent h3 {
+    font-size: 18px;
+  }
+}
+
+body {
+  line-height: 1.6;
+  color: var(--vp-c-text-1);
+  background-color: var(--vp-c-bg);
+}
+
+/* 代码块样式优化 */
+.VPContent pre {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格样式优化 */
+.VPContent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.VPContent th,
+.VPContent td {
+  padding: 8px 12px;
+  border: 1px solid var(--vp-c-border);
+  text-align: left;
+}
+
+.VPContent th {
+  background-color: var(--vp-c-bg-soft);
+  font-weight: 600;
+}
+
+.VPContent tr:nth-child(even) {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* 链接样式优化 */
+.VPContent a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.VPContent a:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration: underline;
+}
+
+/* 标题样式优化 */
+.VPContent h1,
+.VPContent h2,
+.VPContent h3,
+.VPContent h4,
+.VPContent h5,
+.VPContent h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
