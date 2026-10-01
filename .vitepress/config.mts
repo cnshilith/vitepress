@@ -50,6 +50,7 @@ export default defineConfig({
           { text: 'nginx 配置文件', link: '/docs/posts/nginx 配置文件.md' },
           { text: 'nginx配置文件参考', link: '/docs/posts/nginx配置文件参考.md' },
           { text: 'Linux系统初始化', link: '/docs/posts/Linux 系统安装初始化.md' },
+          { text: 'Linux声音修复', link: '/docs/posts/linux声音修复.md' },
           { text: 'vim常用命令', link: '/docs/posts/vim常用命令.md' },
         ]
       },
