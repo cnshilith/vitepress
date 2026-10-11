@@ -2,7 +2,7 @@
 
 > **用法**：把本文档**整篇**复制粘贴给另一台电脑上的 opencode（或其它 AI 编码助手），让它照着自动创建并启用主题。
 >
-> **目标效果**：fcitx5 候选框仿微信输入法——浅色/深色两套、5px 圆角、横排候选、绿色高亮项，并在 4K 屏和系统缩放下保持清晰。
+> **目标效果**：fcitx5 候选框仿微信输入法——浅色/深色两套、5px 圆角、横排候选、青绿色高亮项，并在 4K 屏和系统缩放下保持清晰。
 
 ---
 
@@ -58,7 +58,7 @@ SupportedScale=3
 [InputPanel]
 NormalColor=#424242
 HighlightColor=#ffffff
-HighlightBackgroundColor=#75B100
+HighlightBackgroundColor=#00a76f
 HighlightCandidateColor=#ffffff
 CandidateLabelColor=#999999
 CandidateCommentColor=#999999
@@ -91,8 +91,8 @@ Bottom=5
 
 [InputPanel/Highlight]
 Image=highlight.png
-Color=#75B100
-BorderColor=#75B100
+Color=#00a76f
+BorderColor=#00a76f
 BorderWidth=0
 
 [InputPanel/Highlight/Margin]
@@ -117,7 +117,7 @@ Top=5
 Bottom=5
 
 [Menu/Highlight]
-Color=#75B100
+Color=#00a76f
 
 [Menu/Highlight/Margin]
 Left=5
@@ -160,7 +160,7 @@ SupportedScale=3
 [InputPanel]
 NormalColor=#e9e9ea
 HighlightColor=#ffffff
-HighlightBackgroundColor=#75B100
+HighlightBackgroundColor=#00a76f
 HighlightCandidateColor=#ffffff
 CandidateLabelColor=#999999
 CandidateCommentColor=#999999
@@ -193,8 +193,8 @@ Bottom=5
 
 [InputPanel/Highlight]
 Image=highlight.png
-Color=#75B100
-BorderColor=#75B100
+Color=#00a76f
+BorderColor=#00a76f
 BorderWidth=0
 
 [InputPanel/Highlight/Margin]
@@ -219,7 +219,7 @@ Top=5
 Bottom=5
 
 [Menu/Highlight]
-Color=#75B100
+Color=#00a76f
 
 [Menu/Highlight/Margin]
 Left=5
@@ -252,7 +252,7 @@ Bottom=2
 `~/.local/share/fcitx5/themes/wechat-light/highlight.svg`
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" width="39" height="50">
-    <rect width="39" height="50" rx="5" ry="5" fill="#75B100"/>
+    <rect width="39" height="50" rx="5" ry="5" fill="#00a76f"/>
 </svg>
 ```
 
@@ -266,7 +266,7 @@ Bottom=2
 `~/.local/share/fcitx5/themes/wechat-dark/highlight.svg`
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" width="39" height="50">
-    <rect width="39" height="50" rx="5" ry="5" fill="#75B100"/>
+    <rect width="39" height="50" rx="5" ry="5" fill="#00a76f"/>
 </svg>
 ```
 
@@ -339,8 +339,8 @@ pkill -x fcitx5; sleep 1; nohup fcitx5 -d >/dev/null 2>&1 &
 ## 8. 验证
 
 1. 任意文本框输入拼音，观察候选框：
-   - 浅色模式：白底、绿色高亮块、圆角、横排。
-   - 深色模式：`#2e2925` 底、绿色高亮块。
+   - 浅色模式：白底、青绿色高亮块、圆角、横排。
+   - 深色模式：`#2e2925` 底、青绿色高亮块。
 2. 切换系统深浅色，确认自动在 `wechat-light` / `wechat-dark` 间切换。
 3. 检查无主题加载错误：
    ```bash
@@ -381,7 +381,7 @@ pkill -x fcitx5; sleep 1; nohup fcitx5 -d >/dev/null 2>&1 &
 | 元素 | theme.conf 键 | 浅色 | 深色 |
 |---|---|---|---|
 | 候选条背景 | `InputPanel/Background/Color` | `#ffffff` | `#2e2925` |
-| 高亮候选背景 | `InputPanel/Highlight/Color`、`HighlightBackgroundColor` | `#75B100` | `#75B100` |
+| 高亮候选背景 | `InputPanel/Highlight/Color`、`HighlightBackgroundColor` | `#00a76f` | `#00a76f` |
 | 高亮候选文字 | `HighlightCandidateColor` | `#ffffff` | `#ffffff` |
 | 普通候选文字 | `NormalColor` | `#424242` | `#e9e9ea` |
 | 提示/拼音文字 | `CandidateCommentColor` | `#999999` | `#999999` |
