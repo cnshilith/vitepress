@@ -6,7 +6,8 @@ export default defineConfig({
   // base: "/vitepress/",
   head: [
     ['link', { rel: 'icon', href: '/logo.svg' }],
-    ['link', { rel: 'favicon', href: '/logo.svg' }]
+    ['link', { rel: 'favicon', href: '/logo.svg' }],
+    ['script', { src: 'https://umami.shiyunhao.cn/script.js', 'data-website-id': '390fae62-a4c1-4a80-b83c-6f03b018bcdd', async: true, defer: true }]
   ],
   title: "我的技术笔记",
   description: "VitePress学习之路",
